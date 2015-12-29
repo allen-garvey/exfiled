@@ -6,4 +6,6 @@ file_strings = Stream.map files, fn x -> {g,_} = x
 g
 end
 
-file_string_list = Enum.map file_strings, fn x -> String.split x, "\n"  end
+file_strings2 = Stream.filter file_strings, fn x -> x != "" end
+
+file_string_list = Enum.map file_strings2, fn x -> String.split x, "\n"  end
